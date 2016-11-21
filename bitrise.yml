@@ -10,4 +10,5 @@ workflows:
         - content: |-
             #!/bin/bash
             set -ex
-            docker run hello-world
+            docker build -t bitrise-minimal-sample .
+            docker run --rm bitrise-minimal-sample

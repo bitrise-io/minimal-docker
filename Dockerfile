@@ -1,1 +1,3 @@
-FROM ubuntu:14.04.5
+FROM alpine:3.3
+
+CMD cat /etc/alpine-release
