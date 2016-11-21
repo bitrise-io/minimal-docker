@@ -3,7 +3,7 @@ default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 
 
 workflows:
-  primary:
+  docker-run:
     steps:
     - script:
         inputs:
@@ -12,3 +12,11 @@ workflows:
             set -ex
             docker build -t bitrise-minimal-sample .
             docker run --rm bitrise-minimal-sample
+  docker-compose-run:
+    steps:
+    - script:
+        inputs:
+        - content: |-
+            #!/bin/bash
+            set -ex
+            docker-compose run --rm sample-app
